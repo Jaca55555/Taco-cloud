@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf.cache: false
+
+  datasource:
+    url: jdbc:postgresql://192.23.56.42:5432/taco_cloud_db
+    username: postgres
+    password: jaca55555
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data.rest.base-path: /rest
+
+
+
+  sql:
+    init:
+      mode: always
+
+
+logging:
+  level:
+    root: info
+  file:
+    name: taco_cloud.log
+    path: ./
+
+
+taco:
+  orders:
+    pageSize:${TACO_ORDERS_PAGESIZE:10}
+

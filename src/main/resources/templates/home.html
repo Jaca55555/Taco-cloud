@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Taco Cloud</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
 <body>
-<h1>Welcome to Spring</h1>
-<img th:src="@{/images/taco.jpg}"/>
+<div class=" container">
+  <ul class="navbar">
+    <ul class="main-menu inner-ul">
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/design}">Design</a></li>
+    </ul>
+
+    <ul class="login-logout inner-ul">
+      <li><a th:href="@{/login}">Login</a></li>
+      <li><a th:href="@{/register}">Register</a></li>
+      <li>
+        <form method="POST" th:action="@{/logout}">
+          <input type="submit" value="Logout"/>
+        </form>
+
+      </li>
+    </ul>
+  </ul>
+  <h1>Welcome to ... </h1>
+  <img th:src="@{/images/taco.jpg}"/>
+</div>
+
 </body>
 </html>
